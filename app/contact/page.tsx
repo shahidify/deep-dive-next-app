@@ -1,8 +1,15 @@
-export default function About() {
+import ButtonCustom from './ButtonCustom';
+
+export default async function Contact() {
+  console.log('Contact: Is this Server or Client component ?');
+
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await response.json();
+  console.log(posts);
+
   return (
-    <>
-      <h1>Contact Page</h1>
-      <p>This is Contact me!</p>
-    </>
+    <div>
+      <ButtonCustom />
+    </div>
   );
 }
